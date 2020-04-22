@@ -10,29 +10,23 @@ namespace Mod1_Lab1
     {
         static void Main(string[] args)
         {
-#if DEBUG
+
             try
             {
-                int n = 1;
-                while(n < 6)
-                {
-                    Console.WriteLine($"Current value of n is {n}");
-                    n++;
-                }
-
-                int x = 0;
-                do
-                {
-                    Console.WriteLine(x);
-                    x++;
-                } while (x < 5);
+                Sum(20, 40);
             }
             finally
             {
                 Console.WriteLine("Press enter to close...");
                 Console.ReadLine();
             }
-#endif
+
+        }
+
+        static void Sum(int first, int second)
+        {
+            int sum = first + second;
+            Console.WriteLine($"The sum of {first} and {second} is: {sum}");
         }
     }
 }
