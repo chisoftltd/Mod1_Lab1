@@ -13,36 +13,11 @@ namespace Mod1_Lab1
 #if DEBUG
             try
             {
-                // Create a switch block
-
-                Console.WriteLine("Coffee sizes: 1=small 2=medium 3=large");
-                Console.Write("Please enter your selection: ");
-                string str = Console.ReadLine();
-                int cost = 0;
-
-                switch (str)
+               for(int counter = 0; counter < 100; counter++)
                 {
-                    case "1":
-                    case "small":
-                        cost += 25;
-                        break;
-                    case "2":
-                    case "medium":
-                        cost += 50;
-                        break;
-                    case "3":
-                    case "large":
-                        cost += 75;
-                        break;
-                    default:
-                        Console.WriteLine("Invalid selection. Please select 1, 2, or 3.");
-                        break;
+                    Console.WriteLine($"Counter is at: {counter}");
+                    Console.WriteLine($"Twice the counter is : {counter * 2}");
                 }
-                if (cost != 0)
-                {
-                    Console.WriteLine("Please insert {0} cents.", cost);
-                }
-                Console.WriteLine("Thank you for your business.");
 
             }
             finally
