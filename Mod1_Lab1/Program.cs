@@ -13,14 +13,15 @@ namespace Mod1_Lab1
 
             try
             {
-                int result = Sum(20, 40);
-                Console.WriteLine($"Calling Sum() with two arguments, result is: {result}");
+                int first = 9;
+                int second = 0;
+                Console.WriteLine("Enter your first number: ");
+                first = System.Int32.Parse(Console.ReadLine());
+                Console.WriteLine("Enter your second number: ");
+                second = System.Int32.Parse(Console.ReadLine());
 
-                int result3 = Sum(10, 50, 80);
-                Console.WriteLine($"Calling Sum() with three arguments, result is: {result3}");
-
-                double dblResult = Sum(20.5, 30.6);
-                Console.WriteLine($"Calling Sum() with two doubles, result in: {dblResult}");
+                int result = Divide(first, second);
+                Console.WriteLine($"The result of dividing {first} by {second} is {result}");
             }
             finally
             {
@@ -30,21 +31,18 @@ namespace Mod1_Lab1
 
         }
 
-        static int Sum(int first, int second)
+        static int Divide(int first, int second)
         {
-            int sum = first + second;
-            return sum;
-        }
+            int result = 0;
+            try
+            {
+                result = first / second;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Cannot divide by zero, please provide a non-zero value for your second value");
+            }
 
-        static int Sum(int first, int second, int third)
-        {
-            int sum = first + second + third;
-            return sum;
-        }
-
-        static double Sum(double first, double second)
-        {
-            double result = first + second;
             return result;
         }
     }
