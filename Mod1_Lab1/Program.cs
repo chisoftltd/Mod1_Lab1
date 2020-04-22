@@ -13,30 +13,36 @@ namespace Mod1_Lab1
 #if DEBUG
             try
             {
-                // create an if decision block
-                // use this if block to check for an even number
+                // Create a switch block
 
+                Console.WriteLine("Coffee sizes: 1=small 2=medium 3=large");
+                Console.Write("Please enter your selection: ");
+                string str = Console.ReadLine();
+                int cost = 0;
 
-                // Request user input with ReadLine()
-                Console.WriteLine("Please enter an integer value and press Enter.");
-
-                // Assign the entered value to the variable input
-                // convert input to integer before using
-                int input = Int32.Parse(Console.ReadLine());
-
-                // Check to see if the number is even.
-                // Here we use the simple task of checking for a remainder when dividing by 2
-                // The (%) or modulus operator returns the remainder of integer devision.
-                // If the remainder is 0, then the value is able to be divided by 2 with
-                // no remainder, which means it is an even number.
-                if (input % 2 == 0)
+                switch (str)
                 {
-                    Console.WriteLine("The entered number was an even number.");
+                    case "1":
+                    case "small":
+                        cost += 25;
+                        break;
+                    case "2":
+                    case "medium":
+                        cost += 50;
+                        break;
+                    case "3":
+                    case "large":
+                        cost += 75;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection. Please select 1, 2, or 3.");
+                        break;
                 }
-                else  // the remainder was not 0 so the value entere is an odd number.
+                if (cost != 0)
                 {
-                    Console.WriteLine("The entered number was not an even number.");
+                    Console.WriteLine("Please insert {0} cents.", cost);
                 }
+                Console.WriteLine("Thank you for your business.");
 
             }
             finally
