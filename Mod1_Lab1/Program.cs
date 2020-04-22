@@ -13,22 +13,19 @@ namespace Mod1_Lab1
 #if DEBUG
             try
             {
-               for(int counter = 0; counter < 100; counter++)
+                int n = 1;
+                while(n < 6)
                 {
-                    Console.WriteLine($"Counter is at: {counter}");
-                    Console.WriteLine($"Twice the counter is : {counter * 2}");
+                    Console.WriteLine($"Current value of n is {n}");
+                    n++;
                 }
 
-                int outer;
-                int inner;
-
-                for(outer = 2; outer < 100; outer++)
+                int x = 0;
+                do
                 {
-                    for (inner = 2; inner <= (outer / inner); inner++)
-                        if ((outer % inner) == 0) break;
-                    if (inner > (outer / inner))
-                        Console.WriteLine("{0} is prime", outer);
-                }
+                    Console.WriteLine(x);
+                    x++;
+                } while (x < 5);
             }
             finally
             {
